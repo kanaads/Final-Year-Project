@@ -24,7 +24,16 @@ _(Hosted on Heroku)_
 
 ### 📁 Project Structure
 
-Final-Year-Project/ ├── run.py # Main Flask application ├── text_filter.py # NLP utilities for stopword removal and POS tagging ├── requirements.txt # Python dependencies for deployment and local use ├── Procfile # Tells Heroku how to start the app ├── runtime.txt # (Optional) Specifies Python version for Heroku ├── .env # Environment variables (e.g., SerpAPI key – not committed) └── templates/ ├── index.html # Search input form with Bootstrap styling and spinner └── results.html # Displays similarity results in a styled table
+- `run.py` – Main Flask application  
+- `text_filter.py` – NLP utilities for stopword removal and POS tagging  
+- `requirements.txt` – Python dependencies for deployment and local use  
+- `Procfile` – Tells Heroku how to start the app  
+- `runtime.txt` – *(Optional)* Specifies Python version for Heroku  
+- `.env` – Environment variables (e.g., SerpAPI key – **not committed**)  
+- `templates/` – Contains HTML templates  
+  - `index.html` – Search input form with Bootstrap styling and spinner  
+  - `results.html` – Displays similarity results in a styled table
+
 
 ---
 
