@@ -24,42 +24,21 @@ _(Hosted on Heroku)_
 
 ### 📁 Project Structure
 
-Final-Year-Project/
-├── run.py                  # Main Flask application
+Final-Year-Project/ ├── run.py # Main Flask application ├── text_filter.py # NLP utilities for stopword removal and POS tagging ├── requirements.txt # Python dependencies for deployment and local use ├── Procfile # Tells Heroku how to start the app ├── runtime.txt # (Optional) Specifies Python version for Heroku ├── .env # Environment variables (e.g., SerpAPI key – not committed) └── templates/ ├── index.html # Search input form with Bootstrap styling and spinner └── results.html # Displays similarity results in a styled table
 
-├── text_filter.py          # NLP utilities for stopword removal and POS tagging
+---
 
-├── requirements.txt        # Python dependencies for deployment and local use
+### 🧪 How It Works
 
-├── Procfile                # Tells Heroku how to start the app
-
-├── runtime.txt             # (Optional) Specifies Python version for Heroku
-
-├── .env                    # Environment variables (e.g., SerpAPI key – not committed)
-
-└── templates/
-    
-    ├── index.html          # Search input form with Bootstrap styling and spinner
-    
-    └── results.html        # Displays similarity results in a styled table
-
-
-🧪 How It Works
-User submits a block of text through the web form.
-
-The text is cleaned using NLTK:
-
-Lowercased
-
-Stopwords removed
-
-Only relevant parts of speech retained (nouns, verbs, adjectives).
-
-The processed query is sent to SerpAPI to fetch the top search results from Google.
-
-Each result's URL is fetched and parsed with BeautifulSoup.
-
-The similarity between the input and the result content is calculated using n-gram containment.
-
-Results are displayed as a table with percent similarity and clickable links.
+1. **User submits** a block of text through the web form.
+2. The app **cleans the text** using NLTK:
+   - Converts to lowercase
+   - Removes stopwords
+   - Keeps only relevant parts of speech (nouns, verbs, adjectives)
+3. The cleaned query is sent to **SerpAPI**, which returns the top 4 Google search results.
+4. Each result is fetched and parsed using **BeautifulSoup**.
+5. The app computes **n-gram containment** between the input and each result.
+6. A table is shown with:
+   - 🔗 Source URLs (clickable)
+   - 📊 Similarity percentages
 
